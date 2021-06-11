@@ -122,10 +122,10 @@
 </script>
 
 <template>
-  <select @change="onChange($event.target.value)" :class="className" :autocomplete="autocompleteAttr">
+  <q-select @change="onChange($event.target.value)" :class="className" :autocomplete="autocompleteAttr">
     <option value="" v-if="!disablePlaceholder && !removePlaceholder">{{ placeholder }}</option>
     <option value="" v-if="disablePlaceholder && !removePlaceholder" disabled selected>{{ placeholder }}</option>
     <option v-if="topCountry" :value="firstCountry" :selected="country === firstCountry">{{topCountryName()}}</option>
     <option v-for="(region, index) in countries" :value="region[valueType]" :selected="country === region[valueType]" :key="index">{{ shortCodeDropdown ? region.countryShortCode : region.countryName }}</option>
-  </select>
+  </q-select>
 </template>
